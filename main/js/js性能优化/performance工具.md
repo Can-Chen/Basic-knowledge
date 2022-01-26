@@ -19,7 +19,7 @@
 
 ### google浏览器任务管理器
 
-![任务管理器工具](../assets/任务管理器工具.png)
+![任务管理器工具](../../assets/任务管理器工具.png)
 1. 内存占用空间，表示原声内存，当前界面DOM节点所占据的内存，不断增大代表着不断的新增dom节点
 2. JavaScript使用的内存，表示js堆，小括号中的实际大小表示着界面当中所有可达对象正在使用的内存大小。如果这个数字在不断的增大，证明界面中要么在不断的新增对象，要么现有对象在不断的增长
 
@@ -29,7 +29,7 @@
 
 ### Timeline记录内存
 
-![Timeline工具](../assets/Timeline.png)
+![Timeline工具](../../assets/Timeline.png)
 
 1. 打开控制台
 2. 点击performance
@@ -52,8 +52,8 @@
 
 #### 使用方式
 
-![步骤1](../assets/堆快照1.png)
-![步骤2](../assets/堆快照2.png)
+![步骤1](../../assets/堆快照1.png)
+![步骤2](../../assets/堆快照2.png)
 
 1. 点击图示中的Profiles
 2. 再点击下方的Take snapshit
