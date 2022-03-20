@@ -13,17 +13,18 @@ let promiseAll = (arr) => {
   let count = 0;
 
   return new Promise((resolve, reject) => {
+    function data(index, value) {
+       result[index] = value;
+       count++
+       if (count === arr.length) {
+        resolve(result);
+      } 
+    }
     for (let i = 0; i < arr.length; i++) {
-      new Promise((_resolve, _reject) => {
-        _resolve(arr[i])
-      }).then(v => {
-        result[i] = v;
-        if (++count === arr.length) {
-          resolve(result);
-        }
-      }).catch(e => {
-        reject(e);
-      })
+      if (arr[i] instanceof Promise) {
+         arr[i].then(dara => data(i, data), reason => reject(reason));
+      }else {
+        data(i, arr[i])
     }
   });
 }
@@ -87,13 +88,11 @@ let promiseRace = (arr) => {
 
   return new Promise((resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
-      new Promise((_resolve, _reject) => {
-        _resolve(arr[i])
-      }).then(v => {
-        resolve(v);
-      }).catch(e => {
-        reject(e);
-      })
+      if (arr[i] instanceof Promise) {
+        arr[i].then(data => resolve(data), reason => reject(reason));
+      } else {
+        resolve(arr[i]);
+      }
     }
   });
 }
