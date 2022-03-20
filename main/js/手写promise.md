@@ -22,7 +22,7 @@ let promiseAll = (arr) => {
     }
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] instanceof Promise) {
-         arr[i].then(dara => data(i, data), reason => reject(reason));
+         arr[i].then(value => data(i, value), reason => reject(reason));
       }else {
         data(i, arr[i])
     }
